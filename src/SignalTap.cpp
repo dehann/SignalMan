@@ -4,7 +4,7 @@
 #include <iostream>
 #include <sstream>
 
-#include <path_util/path_util.h>
+//#include <path_util/path_util.h>
 
 
 // creates a new_logging file
@@ -301,7 +301,7 @@ void DistributedDiff::ParameterFileInit() {
 
 	FILE *fp;
 
-	std::string weightsFile = std::string(getConfigPath()) + "/subsystems/legged_odometry/weights.txt";
+	std::string weightsFile = std::string("weights.txt");
 
 	if( (fp = fopen(weightsFile.c_str(), "r+")) == NULL)
 	{
