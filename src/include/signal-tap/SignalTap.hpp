@@ -137,7 +137,7 @@ public:
 };
 
 // This is a mid-point integratioin rule, not trapezoidal
-class TrapezoidalInt {
+class MidpointInt {
 private:
 	Eigen::VectorXd int_dx;
 	Eigen::VectorXd prev_dx;
@@ -154,8 +154,8 @@ private:
 public:
 	EIGEN_MAKE_ALIGNED_OPERATOR_NEW
 
-	TrapezoidalInt();
-	//~TrapezoidalInt();
+	MidpointInt();
+	//~MidpointInt();
 
 	void setSize(const int &s);
 	void setStateTo(const Eigen::VectorXd &set_val);
@@ -178,7 +178,7 @@ private:
 
 	Eigen::VectorXd state;
 	Eigen::VectorXd int_vals;
-	TrapezoidalInt generic_integrator;
+	MidpointInt generic_integrator;
 	NumericalDiff generic_diff;
 
 	bool checkNewRateTrigger(const unsigned long long &cur_u_time);

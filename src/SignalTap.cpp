@@ -537,14 +537,14 @@ Eigen::VectorXd DistributedDiff::diff(const unsigned long long &u_ts, const Eige
 }
 
 
-TrapezoidalInt::TrapezoidalInt() {
+MidpointInt::MidpointInt() {
 	setSize(1);
 	u_stime = 0;
 	Init();
 }
 
 
-void TrapezoidalInt::Init() {
+void MidpointInt::Init() {
 	first_pass = true;
 	size_set = false;
 	int_dx.setZero();
@@ -552,12 +552,12 @@ void TrapezoidalInt::Init() {
 }
 
 /*
-TrapezoidalInt::~TrapezoidalInt() {
+MidpointInt::~MidpointInt() {
 
 }
 */
 
-void TrapezoidalInt::setSize(const int &s) {
+void MidpointInt::setSize(const int &s) {
 	assert(s>-1);
 	size_set = true;
 	size = s;
@@ -569,30 +569,30 @@ void TrapezoidalInt::setSize(const int &s) {
 
 }
 
-void TrapezoidalInt::reset_in_time() {
+void MidpointInt::reset_in_time() {
 	int_dx.setZero();
 	//std::cout << "zeroed";
 }
 
-Eigen::VectorXd TrapezoidalInt::getVal() {
+Eigen::VectorXd MidpointInt::getVal() {
 	return int_dx;
 }
 
-void TrapezoidalInt::setVal(const Eigen::VectorXd &val) {
+void MidpointInt::setVal(const Eigen::VectorXd &val) {
 	int_dx = val;
 }
 
-void TrapezoidalInt::setStateTo(const Eigen::VectorXd &set_val) {
+void MidpointInt::setStateTo(const Eigen::VectorXd &set_val) {
 	int_dx = set_val;
 	prev_dx = set_val;
 
 }
 
-Eigen::VectorXd TrapezoidalInt::integrate(const unsigned long long &u_ts, const Eigen::VectorXd &dx) {
+Eigen::VectorXd MidpointInt::integrate(const unsigned long long &u_ts, const Eigen::VectorXd &dx) {
 	// TODO -- This function should use the u_time stamp from zero. Then it can also be used as an integral time counter and makes best possible use of the available time variable dynamic range
 
 	if (u_ts < u_stime) {
-		std::cout << "TrapezoidalInt::integrate is jumping back in time. This was not expected -- behavior will be unpredictable.\n";
+		std::cout << "MidpointInt::integrate is jumping back in time. This was not expected -- behavior will be unpredictable.\n";
 		u_stime = u_ts;
 	}
 	if (first_pass) {
@@ -611,12 +611,12 @@ Eigen::VectorXd TrapezoidalInt::integrate(const unsigned long long &u_ts, const 
 	return int_dx;
 }
 
-Eigen::VectorXd TrapezoidalInt::integrate(const unsigned long long &ts, const int &num_joints, const double samples[]) {
+Eigen::VectorXd MidpointInt::integrate(const unsigned long long &ts, const int &num_joints, const double samples[]) {
 	if (first_pass && !size_set) {
 		setSize(num_joints);
 		first_pass = false;
 
-		std::cout << "Size of TrapezoidalInt was not set, but automatically adjusted to the first received vector size of: " << num_joints << "\n";
+		std::cout << "Size of MidpointInt was not set, but automatically adjusted to the first received vector size of: " << num_joints << "\n";
 	}
 
 	Eigen::VectorXd to_int(num_joints);
