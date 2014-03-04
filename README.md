@@ -8,16 +8,13 @@ No stand-alone test process yet, but the library compiles.
 To download and compile
 =======================
 
-$ git clone https://github.com/dehann/SignalMan
+git clone https://github.com/dehann/SignalMan.git
 
-Navigate to the build directory,
+Navigate to the build directory; run cmake and make:
 
-$ cd cd SignalMan/build
-
-Run cmake and make,
-
-$ cmake ..
-$ make -j
+cd SignalMan/build
+cmake ..
+make -j
 
 
 
