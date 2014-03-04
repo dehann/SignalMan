@@ -10,7 +10,7 @@ include_directories(${EIGEN3_INCLUDE_DIR})
 include_directories("${CMAKE_CURRENT_SOURCE_DIR}/include")
 
 ################  THIS IS THE SIGNALTAP LIBRARY
-add_library(signal-tap SHARED
+add_library(signal-tap
   SignalTap.cpp)
 
 #target_link_libraries (signal-tap ${REQUIRED_LIBS})# is this right?

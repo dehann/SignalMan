@@ -14,6 +14,7 @@ set(LIBRARY_OUTPUT_PATH "${CMAKE_BINARY_DIR}/lib")
 
 #declare options -- test, measure and confirm
 #option(BUILD_TESTING "Build SignalTap with testing enabled." ON)
+option(BUILD_SHARED_LIBS "Build SignalTap with shared libraries." ON)
 
 find_package(Eigen3 REQUIRED)
 
