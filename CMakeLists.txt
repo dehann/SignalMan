@@ -18,7 +18,15 @@ option(BUILD_SHARED_LIBS "Build SignalTap with shared libraries." ON)
 
 find_package(Eigen3 REQUIRED)
 
-#and finally where the action is at -- build the project
+#where the action is at -- build the project
 add_subdirectory(src)
+
+# copy weights parameter files required for execution -- weights file is used to define weights for DistributedDiff class 
+add_custom_command(
+     OUTPUT ${CMAKE_CURRENT_BINARY_DIR}/weights.txt
+     COMMAND ${CMAKE_COMMAND} -E copy ${CMAKE_CURRENT_SOURCE_DIR}/parameters/weights.txt ${CMAKE_CURRENT_BINARY_DIR}/weights.txt
+     DEPENDS ${CMAKE_CURRENT_SOURCE_DIR}/parameters/weights.txt
+   )
+
 
 
