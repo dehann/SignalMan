@@ -2,14 +2,22 @@
 SignalMan
 =========
 
-Useful signal manipulation functions 
+.. contents:: Table of Contents
+
+Introduction
+------------
+
+Useful signal manipulation functions.
 
 Doesn't yet have a stand alone test application -- work in progress.
 
-.. Dependencies::
- cmake
- boost
- Eigen
+Dependencies
+------------
+::
+
+    cmake
+    boost
+    Eigen
 
 To download and compile
 =======================
