@@ -6,11 +6,10 @@ Useful signal manipulation functions
 
 Doesn't yet have a stand alone test application -- work in progress.
 
-Dependencies
-------------
-.. cmake
-.. boost
-.. Eigen
+.. Dependencies::
+ cmake
+ boost
+ Eigen
 
 To download and compile
 =======================
