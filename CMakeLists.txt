@@ -14,8 +14,7 @@ set(LIBRARY_OUTPUT_PATH "${CMAKE_BINARY_DIR}/lib")
 #declare options -- test, measure and confirm
 #option(BUILD_TESTING "Build SignalTap with testing enabled." ON)
 
-#add external dependencies
-include(${PROJECT_SOURCE_DIR}/cmake/FindEigen3.cmake)
+find_package(Eigen3 REQUIRED)
 
 #and finally where the action is at -- build the project
 add_subdirectory(src)

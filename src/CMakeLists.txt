@@ -2,10 +2,6 @@ set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wno-deprecated-declarations -Wreturn-ty
 
 cmake_minimum_required(VERSION 2.8.0)
 
-# Eigen3 is needed -- use the system installed version
-SET(CMAKE_MODULE_PATH ${PROJECT_SOURCE_DIR}/cmake)
-find_package(Eigen3 REQUIRED)
-
 #set(REQUIRED_LIBS boost_system)
 find_package(Boost 1.46 COMPONENTS filesystem unit_test_framework REQUIRED)
 message(status "** Boost Include: ${Boost_INCLUDE_DIR}")
