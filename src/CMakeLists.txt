@@ -8,9 +8,6 @@ message(status "** Boost Include: ${Boost_INCLUDE_DIR}")
 message(status "** Boost Libraries: ${Boost_LIBRARY_DIRS}")
 message(status "** Boost Libraries: ${Boost_LIBRARIES}")
 
-#Shall we Release or Debug
-SET(CMAKE_BUILD_TYPE Release)
-
 # umm not sure what to do
 include_directories ("${PROJECT_SOURCE_DIR}/src/include/signal-tap")
 

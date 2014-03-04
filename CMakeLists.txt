@@ -4,6 +4,7 @@ cmake_minimum_required(VERSION 2.8.0)
 project(SIGNALTAP)
 
 list(APPEND CMAKE_MODULE_PATH "${CMAKE_SOURCE_DIR}/cmake/modules")
+include(cmake/BuildType.cmake)
 
 #where things go during compiling
 set(SIGNALTAP_INSTALL_LIB_DIR lib)
