@@ -1,7 +1,5 @@
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wno-deprecated-declarations -Wreturn-type -Wuninitialized -Wunused-variable -std=c++0x")
 
-cmake_minimum_required(VERSION 2.8.0)
-
 #set(REQUIRED_LIBS boost_system)
 find_package(Boost 1.46 COMPONENTS filesystem unit_test_framework REQUIRED)
 message(status "** Boost Include: ${Boost_INCLUDE_DIR}")
