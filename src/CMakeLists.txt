@@ -6,8 +6,8 @@ message(status "** Boost Include: ${Boost_INCLUDE_DIR}")
 message(status "** Boost Libraries: ${Boost_LIBRARY_DIRS}")
 message(status "** Boost Libraries: ${Boost_LIBRARIES}")
 
-# umm not sure what to do
-include_directories ("${PROJECT_SOURCE_DIR}/src/include/signal-tap")
+include_directories(${EIGEN3_INCLUDE_DIR})
+include_directories("${CMAKE_CURRENT_SOURCE_DIR}/include")
 
 ################  THIS IS THE SIGNALTAP LIBRARY
 add_library(signal-tap SHARED
