@@ -1,7 +1,7 @@
-SignalTap
+SignalMan
 =========
 
 Useful signal manipulation functions 
 
 
-COMPILATION IS CURRENTLY BROKEN. Work In Progress
+COMPILING IS CURRENTLY BROKEN. Work In Progress
