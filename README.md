@@ -10,7 +10,7 @@ To download and compile
 
 git clone https://github.com/dehann/SignalMan.git
 
-Navigate to the build directory; run cmake and make:
+Navigate to the build directory:
 
 cd SignalMan/build
 
