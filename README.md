@@ -1,3 +1,4 @@
+
 =========
 SignalMan
 =========
@@ -5,7 +6,7 @@ SignalMan
 .. contents:: Table of Contents
 
 Introduction
-------------
+============
 
 Useful signal manipulation functions.
 
@@ -13,6 +14,8 @@ Doesn't yet have a stand alone test application -- work in progress.
 
 Dependencies
 ------------
+
+This library depends on the following packages:
 ::
 
     cmake
